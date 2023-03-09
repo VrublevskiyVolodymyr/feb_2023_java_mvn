@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/crs/test/**/target/
 
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/larRepositories.xml
