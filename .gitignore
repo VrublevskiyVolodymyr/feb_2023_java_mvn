@@ -1,0 +1,16 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/crs/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/larRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+.idea/*
+.idea
+.idea/**

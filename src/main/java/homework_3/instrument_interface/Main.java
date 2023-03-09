@@ -23,6 +23,7 @@ public class Main {
 
         for (Instrument instrument : instruments) {
             instrument.play();
+
         }
     }
 }
