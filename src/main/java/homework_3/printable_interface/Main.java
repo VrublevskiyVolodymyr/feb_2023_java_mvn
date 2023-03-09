@@ -6,7 +6,6 @@ package homework_3.printable_interface;
 //        г) Створити масив типу Printable, який міститиме книжки та журнали.
 
 
-
 import java.util.ArrayList;
 
 public class Main {
