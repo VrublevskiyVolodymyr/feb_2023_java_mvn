@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Guitar implements Instrument{
+public class Guitar implements Instrument {
     private int numOfStrings;
 
     @Override

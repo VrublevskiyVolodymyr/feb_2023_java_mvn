@@ -14,6 +14,5 @@ public class Drum implements Instrument{
     @Override
     public void play() {
         System.out.println("Drum plays with " + size + " size");
-
     }
 }

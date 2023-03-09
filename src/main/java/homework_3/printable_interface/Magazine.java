@@ -1,10 +1,8 @@
 package homework_3.printable_interface;
 
-
 import java.util.ArrayList;
 
-
-public class Magazine extends Book implements Printable{
+public class Magazine extends Book implements Printable {
     private String category;
     private int issueNumber;
 
