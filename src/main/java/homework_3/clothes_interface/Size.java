@@ -32,7 +32,6 @@ public enum Size {
         }
     };
 
-
     public final int euroSize;
 
     Size(int euroSize) {

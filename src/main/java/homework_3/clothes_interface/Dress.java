@@ -13,5 +13,4 @@ public class Dress extends Clothes implements WomansСlothes {
     public void dressWoman() {
         System.out.println("Dressing a woman in a" + this.getClass().getSimpleName());
     }
-
 }

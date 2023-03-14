@@ -1,6 +1,5 @@
 package homework_3.clothes_interface;
 
-
 public class Pants extends Clothes implements WomansСlothes, MansСlothes {
 
     public void dressMan() {

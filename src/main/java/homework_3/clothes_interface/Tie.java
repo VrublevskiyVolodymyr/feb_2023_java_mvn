@@ -11,5 +11,6 @@ public class Tie extends Clothes implements MansСlothes {
 
     public Tie(Size size, double cost, String color) {
         super(size, cost, color);
+
     }
 }

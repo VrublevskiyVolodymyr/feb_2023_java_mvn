@@ -1,9 +1,6 @@
 package homework_3.clothes_interface;
 
-
-
 public class Tshirt extends Clothes implements MansСlothes, WomansСlothes {
-
 
     @Override
     public void dressMan() {

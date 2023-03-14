@@ -13,5 +13,6 @@ public class Main {
         System.out.println(atelier1.getManClothes());
         System.out.println("*******************");
         System.out.println(atelier1.getWomanClothes());
+
     }
 }
