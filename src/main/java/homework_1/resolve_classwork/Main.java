@@ -32,17 +32,25 @@ public class Main {
         session.beginTransaction();
 
         List<String> skills = new ArrayList<>();
-        skills.add("java");
+        skills.add("python");
         skills.add("js");
         skills.add("html");
         User user = new User("petya", skills, Gender.MALE);
-//
+
         session.save(user);
+
+//       User user1 = session.find(User.class, 1L);
+//        session.remove(user1);
+//
+//        User user1 = session.find(User.class, 1L);
+//        user1.setName("taras");
+//        session.update(user1);
+
         session.getTransaction().commit();
-//        session
-//                .createQuery("select user from User user where user.id>0", User.class)
-//                .getResultList()
-//                .forEach(System.out::println);
+        session
+                .createQuery("select user from User user where user.id>0", User.class)
+                .getResultList()
+                .forEach(System.out::println);
 
         session.close();
         sessionFactory.close();
