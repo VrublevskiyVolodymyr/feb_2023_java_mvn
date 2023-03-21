@@ -6,7 +6,8 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.url">
-            jdbc:mysql://localhost:3306/feb2023hibernate?createDatabaseIfNotExist=true
+<!--            jdbc:mysql://localhost:3306/feb2023hibernate?createDatabaseIfNotExist=true-->
+            jdbc:mysql://localhost:3306/sakila
         </property>
         <property name="connection.driver_class">
             com.mysql.cj.jdbc.Driver
@@ -16,4 +17,5 @@
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
     </session-factory>
+
 </hibernate-configuration>
