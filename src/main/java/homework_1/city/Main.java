@@ -1,4 +1,4 @@
-package homework_1.actor;
+package homework_1.city;
 
 import homework_1.actor.emtity.Actor;
 import org.hibernate.Session;
@@ -15,7 +15,7 @@ public class Main {
                 .build();
 
         Metadata metadata = new MetadataSources(serviceRegistry)
-                .addAnnotatedClass(Actor.class)
+                .addAnnotatedClass(City.class)
                 .getMetadataBuilder()
                 .build();
 
@@ -23,26 +23,25 @@ public class Main {
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
-        Actor actor = new Actor( "vasya","petrov");
+        City city =new City("Dnipro", (short) 5);
 
-        session.save(actor);
+        session.save(city);
 
-//        Actor actor1 = session.find( Actor.class, 201L);
-//        session.remove(actor1);
+//        City city1 = session.find( City.class, 601L);
+//        session.remove(city1);
 
-        Actor actor1 = session.find( Actor.class, 201L);
-        actor1.setFirst_name("taras");
-        session.update(actor1);
+        City city1 = session.find( City.class, 600L);
+        city1.setCity("Lviv");
+        session.update(city1);
 
         session.getTransaction().commit();
 
 
         session
-                .createQuery("select actor from Actor actor where actor.actor_id>0", Actor.class)
+                .createQuery("select city from City city where city.city_id>0", City.class)
                 .getResultList()
                 .forEach(System.out::println);
         session.close();
         sessionFactory.close();
-
     }
 }
