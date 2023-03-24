@@ -39,12 +39,12 @@ public class Main {
         Car car5 = new Car("Model S", CarType.SEDAN, 670, 80000, 2021);
         Car car6 = new Car("Dodge Ram", CarType.VAN, 850, 110000, 2000);
 
-        session.persist(car1);
-        session.persist(car2);
-        session.persist(car3);
-        session.persist(car4);
-        session.persist(car5);
-        session.persist(car6);
+//        session.persist(car1);
+//        session.persist(car2);
+//        session.persist(car3);
+//        session.persist(car4);
+//        session.persist(car5);
+//        session.persist(car6);
 
         Owner owner1 = new Owner("John", Arrays.asList(car1, car2), new DriveLicense("AB123456"));
         Owner owner2 = new Owner("Jane", Arrays.asList(car3, car4), new DriveLicense("CD654321"));
@@ -52,11 +52,11 @@ public class Main {
         Owner owner4 = new Owner("Alice", Arrays.asList(car3, car6), new DriveLicense("GH246810"));
         Owner owner5 = new Owner("David", Arrays.asList(car2, car4), new DriveLicense("IJ135790"));
 
-        session.persist(owner1);
-        session.persist(owner2);
-        session.persist(owner3);
-        session.persist(owner4);
-        session.persist(owner5);
+//        session.persist(owner1);
+//        session.persist(owner2);
+//        session.persist(owner3);
+//        session.persist(owner4);
+//        session.persist(owner5);
 ////
 //        Owner owner3 = session.find(Owner.class, 3);
 
@@ -66,11 +66,15 @@ public class Main {
 //             owner3.getCars().add(car6);
 
         session.getTransaction().commit();
-
+// щоб вивести owner через car треба забрати ToString з car бо інакше буде зациклення і навпаки
         session
                 .createQuery("select owner.cars from Owner owner where owner.id>0", Car.class)
                 .getResultList()
                 .forEach(System.out::println);
+// щоб вивести owner через car треба забрати ToString з car бо інакше буде зациклення і навпаки
+//        Car car = session.find(Car.class, 3);
+//        System.out.println(car.getOwner());
+
         session.close();
         sessionFactory.close();
 

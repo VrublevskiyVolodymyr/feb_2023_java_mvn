@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @Getter
@@ -21,6 +23,10 @@ public class Car {
     private int power;
     private double price;
     private int year;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "owner_cars", joinColumns = @JoinColumn(name = "car_id"), inverseJoinColumns = @JoinColumn(name = "owner_id")
+    )
+    private List<Owner> owner;
 
     public Car(String model, CarType type, int power, double price, int year) {
         this.model = model;
