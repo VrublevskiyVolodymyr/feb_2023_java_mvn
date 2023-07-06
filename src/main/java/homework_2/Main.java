@@ -72,8 +72,8 @@ public class Main {
                 .getResultList()
                 .forEach(System.out::println);
 // щоб вивести owner через car треба забрати ToString з car бо інакше буде зациклення і навпаки
-//        Car car = session.find(Car.class, 3);
-//        System.out.println(car.getOwner());
+        Car car = session.find(Car.class, 3);
+        System.out.println(car.getOwner());
 
         session.close();
         sessionFactory.close();

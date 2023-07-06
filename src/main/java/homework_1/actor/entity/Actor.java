@@ -1,4 +1,4 @@
-package homework_1.actor.emtity;
+package homework_1.actor.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

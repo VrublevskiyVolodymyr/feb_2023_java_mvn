@@ -1,6 +1,5 @@
 package homework_1.city;
 
-import homework_1.actor.emtity.Actor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

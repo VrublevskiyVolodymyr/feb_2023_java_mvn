@@ -10,6 +10,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString(exclude = "owner")
 
 
 public class DriveLicense {
