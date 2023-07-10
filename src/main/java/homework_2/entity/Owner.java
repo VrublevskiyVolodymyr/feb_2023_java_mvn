@@ -1,19 +1,14 @@
 package homework_2.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString(exclude = {"cars"})
+@Data
 
 public class Owner {
     @Id
@@ -21,14 +16,15 @@ public class Owner {
     private int id;
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "owner_cars",
             joinColumns = @JoinColumn(name = "owner_id"),
             inverseJoinColumns = @JoinColumn(name = "car_id")
     )
     private List<Car> cars=new ArrayList<>();
-    @OneToOne(cascade = {CascadeType.ALL},fetch = FetchType.LAZY)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "driveLicence_id" , referencedColumnName = "id")
     private DriveLicense driveLicense;
 

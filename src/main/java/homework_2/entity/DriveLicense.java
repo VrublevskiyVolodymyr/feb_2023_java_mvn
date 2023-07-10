@@ -1,17 +1,11 @@
 package homework_2.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString(exclude = "owner")
-
+@Data
 
 public class DriveLicense {
     @Id
@@ -19,8 +13,6 @@ public class DriveLicense {
     private int id;
     private String series;
 
-    @OneToOne(cascade = {CascadeType.ALL}, mappedBy = "driveLicense", fetch = FetchType.LAZY)
-    private Owner owner;
 
     public DriveLicense(String series) {
         this.series = series;

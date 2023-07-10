@@ -66,14 +66,14 @@ public class Main {
 //             owner3.getCars().add(car6);
 
         session.getTransaction().commit();
-// щоб вивести owner через car треба забрати ToString з car бо інакше буде зациклення і навпаки
+
         session
                 .createQuery("select owner.cars from Owner owner where owner.id>0", Car.class)
                 .getResultList()
                 .forEach(System.out::println);
-// щоб вивести owner через car треба забрати ToString з car бо інакше буде зациклення і навпаки
-        Car car = session.find(Car.class, 3);
-        System.out.println(car.getOwner());
+
+        Owner owner = session.find(Owner.class, 3);
+        System.out.println(owner);
 
         session.close();
         sessionFactory.close();
